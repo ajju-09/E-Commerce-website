@@ -12,7 +12,7 @@ export type Data = {
     carousels: {
         image: string
         url: string
-        titles: string
+        title: string
         buttonCaption: string
         isPublished: boolean
     }[]
