@@ -3,6 +3,9 @@ import data from "@/lib/data";
 
 export default async function Page() {
   return(
-      <HomeCarousel items={data.carousels} />
+      <HomeCarousel items={data.carousels.map(item => ({
+        ...item,
+        title: item.titles
+      }))} />
   )
 }
