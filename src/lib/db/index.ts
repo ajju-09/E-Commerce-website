@@ -1,5 +1,12 @@
 import mongoose from 'mongoose';
 
+declare global {
+    var mongoose: {
+      conn: typeof mongoose | null;
+      promise: Promise<typeof mongoose> | null;
+    };
+  }
+
 // This cached connection avoid a multiple connection to the database when the server is running in development mode
 const cached = (global as any ).mongoose || { conn: null, promise: null };
 export const connectToDatabase = async (
