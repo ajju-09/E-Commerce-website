@@ -5,7 +5,7 @@ import * as React from 'react'
 import ProductCard from './product-card'
 
 export default function ProductSlider( {title, products, hideDetails = false}: 
-    {title?: string, products: IProduct[], hideDetails?: boolean } ) {
+    {title?: string, products: IProduct[], hideDetails?: boolean, } ) {
         return(
             <div className="w-full bg-background">
                 <h2 className="h2-bold mb-5">{title}</h2>
@@ -21,7 +21,6 @@ export default function ProductSlider( {title, products, hideDetails = false}:
                         >
                             <ProductCard
                             hideDetails={hideDetails}
-                            hideAddToCart
                             hideBorder
                             product={product}
                             />

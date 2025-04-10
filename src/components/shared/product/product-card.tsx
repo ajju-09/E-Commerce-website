@@ -8,8 +8,8 @@ import { formatNumber } from "@/lib/utils";
 import ProductPrice from "./product-price";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
-const ProductCard = ( {product, hideBorder = false, hideDetails = false, hideAddToCart = false}: {
-    product: IProduct, hideDetails?: boolean, hideBorder?: boolean, hideAddToCart?: boolean} ) => {
+const ProductCard = ( {product, hideBorder = false, hideDetails = false}: {
+    product: IProduct, hideDetails?: boolean, hideBorder?: boolean} ) => {
         const ProductImage = () => (
             <Link href={`/product/${product.slug}`}>
                 <div className="relative h-52">

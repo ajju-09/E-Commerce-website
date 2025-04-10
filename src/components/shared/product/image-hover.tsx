@@ -11,7 +11,7 @@ const ImageHover = ({
     alt: string
 }) => {
     const [isHovered, setIsHovered] = useState(false)
-    let hoverTimeout: any
+    let hoverTimeout: NodeJS.Timeout
     const handleMouseEnter = () => {
         hoverTimeout = setTimeout(() => setIsHovered(true), 1000)
     }
