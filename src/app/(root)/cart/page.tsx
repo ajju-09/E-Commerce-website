@@ -24,7 +24,7 @@ export default function CartPage() {
         <div>
             <div className="grid grid-cols-1 md:grid-cols-4 md:gap-4">
                 {items.length === 0 ? (
-                    <Card className="cols-span-4 rounded-none">
+                    <Card className="col-span-4 rounded-none">
                         <CardHeader className="text-3xl">
                             Your Shopping Cart is Empty
                         </CardHeader>
@@ -44,7 +44,7 @@ export default function CartPage() {
                                         key={item.clientId}
                                         >
                                             <Link href={`/product/${item.slug}`}>
-                                            <div className="realtive w-40 h-40">
+                                            <div className="relative w-40 h-40">
                                                 <Image 
                                                     src={item.image}
                                                     alt={item.name}
@@ -126,7 +126,7 @@ export default function CartPage() {
                                         </div>
                                     ))}
 
-                                    <div className="flex jsutify-end text-lg my-2">
+                                    <div className="flex justify-end text-lg my-2">
                                         Subtotal (
                                             {items.reduce((acc, item) => acc + item.quantity, 0)}{' '}
                                             Items

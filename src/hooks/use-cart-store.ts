@@ -89,7 +89,7 @@ const UseCartStore = create(
                     x.product === item.product &&
                     x.color === item.color &&
                     x.size === item.size 
-                    ? { ...exist, qunatity: quantity} : x
+                    ? { ...exist, quantity: quantity} : x
                 )
 
                 set({
