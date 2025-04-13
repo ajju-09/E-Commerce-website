@@ -1,5 +1,6 @@
 'use client'
 
+import useCartSidebar from "@/hooks/use-cart-sidebar";
 import UseCartStore from "@/hooks/use-cart-store";
 import useIsMounted from "@/hooks/use-is-mounted"
 import { cn } from "@/lib/utils";
@@ -11,6 +12,7 @@ export default function CartButton(){
     const { cart: { items} } = UseCartStore();
 
     const cartItemsCount = items.reduce((a, c) => a + c.quantity, 0);
+    const isCartSidebarOpen = useCartSidebar()
 
     return(
         <Link 
@@ -28,6 +30,9 @@ export default function CartButton(){
                     </span>
                 )}
                 <span className="font-bold">Cart</span>
+                {isCartSidebarOpen && (
+                    <div className={`absolute top-[20px] right-[-16px] rotate-[-90deg] z-10 w-0 h-0 border-l-[7px] border-r-[7px] border-b-[8px] border-transparent border-b-background`}></div>
+                )}
             </div>
         </Link>
     )
